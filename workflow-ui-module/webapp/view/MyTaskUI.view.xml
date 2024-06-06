@@ -1,0 +1,100 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:form="sap.ui.layout.form"
+    controllerName="wiprofrm.workflowuimodule.controller.MyTaskUI">
+    
+    <App>
+        <Page title="Form Title">
+            <content>
+                <form:SimpleForm
+                    id="SimpleForm"
+                    editable="true"
+                    layout="ResponsiveGridLayout"
+                    labelSpanL="4"
+                    labelSpanM="3"
+                    emptySpanL="0"
+                    emptySpanM="0"
+                    columnsL="1"
+                    columnsM="1"
+                    title="Simple Form">
+                    
+                    <form:content>
+
+                        <Label text="Creating a saving for against"/>
+                        <Input id="CreatingSavingForagainst"/>
+                        
+                        <Label text="Cluster" />
+                        <Input id="Cluster" />
+
+                        <Label text="PO Number" />
+                        <Input id="PONumber" required="true" />
+
+                        <Label text="PO Value with Currency" />
+                        <Input id="POValueWithCurrency" />
+
+                        <Label text="Vendor Name" />
+                        <Input id="VendorName" />
+
+                        <Label text="Vendor Code" />
+                        <Input id="VendorCode" />
+
+                        <Label text="Category" />
+                        <Input id="Category" />
+
+                        <Label text="Project Description" />
+                        <Input id="ProjectDescription" />
+
+                        <Label text="Region" />
+                        <Input id="Region" />
+
+                        <Label text="Saving Start Date" />
+                        <DatePicker id="SavingStartDate" />
+
+                        <Label text="Saving End Date" />
+                        <DatePicker id="SavingEndDate" />
+
+                        <Label text="Last Year PO No." />
+                        <Input id="LastYearPONo" />
+
+                        <Label text="Last Year PO Value" />
+                        <Input id="LastYearPOValue" />
+
+                        <Label text="Last Year PO Currency" />
+                        <Input id="LastYearPOCurrency" />
+
+                        <Label text="Attachment" />
+                        <Input id="Attachment" />
+
+                        <Label text="Quoted Value/Prev Period Spend" />
+                        <Input id="QuotedValuePrevPeriodSpend" />
+
+                        <Label text="Currency" />
+                        <Input id="Currency" />
+
+                        <Label text="Order Value/Revised Spend In USD" />
+                        <Input id="OrderValueRevisedSpendInUSD" />
+
+                        <Label text="Savings" />
+                        <Input id="Savings" />
+
+                        <Label text="Savings (%)" />
+                        <Input id="SavingsPercentage" />
+
+                        <Label text="Saving Type" />
+                        <Input id="SavingType" />
+
+                        <Label text="Saving Distribution across Qtrs" />
+                        <Input id="SavingDistributionAcrossQtrs" />
+
+                        <Label text="BMF Validation" />
+                        <Input id="BMFValidation" />
+
+                        <Label text="YOY Saving - function BMF Approval" />
+                        <Input id="YOYSavingFunctionBMApproval" />
+                    </form:content>
+                </form:SimpleForm>
+            </content>
+        </Page>
+    </App>
+</mvc:View>

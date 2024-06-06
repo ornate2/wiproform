@@ -1,0 +1,257 @@
+{
+    "_version": "1.26.0",
+    "sap.app": {
+        "id": "wiprofrm.workflowuimodule",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.8.4",
+            "toolsId": "34293a37-4753-46ec-8172-1cf35f717cd3"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "dependencies": {
+            "minUI5Version": "1.82.2",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "wiprofrm.workflowuimodule.i18n.i18n"
+                }
+            },
+            "": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {}
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "wiprofrm.workflowuimodule.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteMyTaskUI",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetMyTaskUI"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetMyTaskUI": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "MyTaskUI",
+                    "viewName": "MyTaskUI"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "wiprofrm.workflowuimodule.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    },
+    "sap.cloud": {
+        "public": true,
+        "service": "wiproForm"
+    },
+    "sap.bpa.task": {
+        "_version": "1.0.0",
+        "inputs": {
+            "$schema": "http://json-schema.org/draft-07/schema",
+            "title": "input",
+            "type": "object",
+            "properties": {
+                "CreatingSavingForagainst": {
+                    "type": "string",
+                    "title": "Creating a saving for against"
+                },
+                "Cluster": {
+                    "type": "string",
+                    "title": "Cluster"
+                },
+                "PONumber": {
+                    "type": "string",
+                    "title": "PO Number"
+                },
+                "POValueWithCurrency": {
+                    "type": "string",
+                    "title": "PO Value with Currency"
+                },
+                "VendorName": {
+                    "type": "string",
+                    "title": "Vendor Name"
+                },
+                "VendorCode": {
+                    "type": "string",
+                    "title": "Vendor Code"
+                },
+                "Category": {
+                    "type": "string",
+                    "title": "Category"
+                },
+                "ProjectDescription": {
+                    "type": "string",
+                    "title": "Project Description"
+                },
+                "Region": {
+                    "type": "string",
+                    "title": "Region"
+                },
+                "SavingStartDate": {
+                    "type": "string",
+                    "format": "date",
+                    "title": "Saving Start Date"
+                },
+                "SavingEndDate": {
+                    "type": "string",
+                    "format": "date",
+                    "title": "Saving End Date"
+                },
+                "LastYearPONo": {
+                    "type": "string",
+                    "title": "Last Year PO No."
+                },
+                "LastYearPOValue": {
+                    "type": "string",
+                    "title": "Last Year PO Value"
+                },
+                "LastYearPOCurrency": {
+                    "type": "string",
+                    "title": "Last Year PO Currency"
+                },
+                "Attachment": {
+                    "type": "string",
+                    "title": "Attachment"
+                },
+                "QuotedValuePrevPeriodSpend": {
+                    "type": "string",
+                    "title": "Quoted Value/Prev Period Spend"
+                },
+                "Currency": {
+                    "type": "string",
+                    "title": "Currency"
+                },
+                "OrderValueRevisedSpendInUSD": {
+                    "type": "string",
+                    "title": "Order Value/Revised Spend In USD"
+                },
+                "Savings": {
+                    "type": "string",
+                    "title": "Savings"
+                },
+                "SavingsPercentage": {
+                    "type": "string",
+                    "title": "Savings (%)"
+                },
+                "SavingType": {
+                    "type": "string",
+                    "title": "Saving Type"
+                },
+                "SavingDistributionAcrossQtrs": {
+                    "type": "string",
+                    "title": "Saving Distribution across Qtrs"
+                },
+                "BMFValidation": {
+                    "type": "string",
+                    "title": "BMF Validation"
+                },
+                "YOYSavingFunctionBMApproval": {
+                    "type": "string",
+                    "title": "YOY Saving - function BMF Approval"
+                }
+            }
+        },
+        "outputs": {
+            "$schema": "http://json-schema.org/draft-07/schema",
+            "title": "output",
+            "type": "object",
+            "properties": {
+                "comment": {
+                    "type": "string",
+                    "title": "Comment"
+                }
+            }
+        },
+        "outcomes": [
+            {
+                "id": "approve",
+                "label": "Approve"
+            },
+            {
+                "id": "reject",
+                "label": "Reject"
+            }
+        ],
+        "category": "approval"
+    }
+
+
+}

@@ -1,99 +1,101 @@
-<mvc:View
-    xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
+<mvc:View 
+    controllerName="wiprofrm.workflowuimodule.controller.MyTaskUI"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" 
+    displayBlock="true"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
     xmlns:form="sap.ui.layout.form"
-    controllerName="wiprofrm.workflowuimodule.controller.MyTaskUI">
+    xmlns:smartForm="sap.ui.comp.smartform"
+    xmlns:smartField="sap.ui.comp.smartfield"
+    xmlns="sap.m">
     
-    <App>
-        <Page title="Form Title">
+    <App id="app">
+        <Page id="scroll">
             <content>
-                <form:SimpleForm
-                    id="SimpleForm"
-                    editable="true"
-                    layout="ResponsiveGridLayout"
-                    labelSpanL="4"
-                    labelSpanM="3"
-                    emptySpanL="0"
-                    emptySpanM="0"
-                    columnsL="1"
-                    columnsM="1"
-                    title="Simple Form">
-                    
+                <form:SimpleForm id="request-information-form" editable="false" layout="ResponsiveGridLayout" singleContainerFullSize="false">
                     <form:content>
-
-                        <Label text="Creating a saving for against"/>
-                        <Input id="CreatingSavingForagainst"/>
+                        <core:Title id="form-heading" text="Please fill in the following details:"/>
                         
-                        <Label text="Cluster" />
-                        <Input id="Cluster" />
-
-                        <Label text="PO Number" />
-                        <Input id="PONumber" required="true" />
-
-                        <Label text="PO Value with Currency" />
-                        <Input id="POValueWithCurrency" />
-
-                        <Label text="Vendor Name" />
-                        <Input id="VendorName" />
-
-                        <Label text="Vendor Code" />
-                        <Input id="VendorCode" />
-
-                        <Label text="Category" />
-                        <Input id="Category" />
-
-                        <Label text="Project Description" />
-                        <Input id="ProjectDescription" />
-
-                        <Label text="Region" />
-                        <Input id="Region" />
-
-                        <Label text="Saving Start Date" />
-                        <DatePicker id="SavingStartDate" />
-
-                        <Label text="Saving End Date" />
-                        <DatePicker id="SavingEndDate" />
-
-                        <Label text="Last Year PO No." />
-                        <Input id="LastYearPONo" />
-
-                        <Label text="Last Year PO Value" />
-                        <Input id="LastYearPOValue" />
-
-                        <Label text="Last Year PO Currency" />
-                        <Input id="LastYearPOCurrency" />
-
-                        <Label text="Attachment" />
-                        <Input id="Attachment" />
-
-                        <Label text="Quoted Value/Prev Period Spend" />
-                        <Input id="QuotedValuePrevPeriodSpend" />
-
-                        <Label text="Currency" />
-                        <Input id="Currency" />
-
-                        <Label text="Order Value/Revised Spend In USD" />
-                        <Input id="OrderValueRevisedSpendInUSD" />
-
-                        <Label text="Savings" />
-                        <Input id="Savings" />
-
-                        <Label text="Savings (%)" />
-                        <Input id="SavingsPercentage" />
-
-                        <Label text="Saving Type" />
-                        <Input id="SavingType" />
-
-                        <Label text="Saving Distribution across Qtrs" />
-                        <Input id="SavingDistributionAcrossQtrs" />
-
-                        <Label text="BMF Validation" />
-                        <Input id="BMFValidation" />
-
-                        <Label text="YOY Saving - function BMF Approval" />
-                        <Input id="YOYSavingFunctionBMApproval" />
+                        <Label id="cluster-label" text="Cluster" labelFor="cluster-field"/>
+                        <Input id="cluster-field" value="{context>/cluster}" />
+                        
+                        <Label id="po-number-label" text="PO Number" labelFor="po-number-field"/>
+                        <Input id="po-number-field" value="{context>/poNumber}" required="true" />
+                        
+                        <Label id="po-value-currency-label" text="PO Value with Currency" labelFor="po-value-currency-field"/>
+                        <Input id="po-value-currency-field" value="{context>/poValueWithCurrency}" />
+                        
+                        <Label id="vendor-name-label" text="Vendor Name" labelFor="vendor-name-field"/>
+                        <Input id="vendor-name-field" value="{context>/vendorName}" />
+                        
+                        <Label id="vendor-code-label" text="Vendor Code" labelFor="vendor-code-field"/>
+                        <Input id="vendor-code-field" value="{context>/vendorCode}" />
+                        
+                        <Label id="category-label" text="Category" labelFor="category-field"/>
+                        <Input id="category-field" value="{context>/category}" />
+                        
+                        <Label id="project-description-label" text="Project Description" labelFor="project-description-field"/>
+                        <Input id="project-description-field" value="{context>/projectDescription}" />
+                        
+                        <Label id="region-label" text="Region" labelFor="region-field"/>
+                        <Input id="region-field" value="{context>/region}" />
+                        
+                        <Label id="saving-start-date-label" text="Saving Start Date" labelFor="saving-start-date-field"/>
+                        <DatePicker id="saving-start-date-field" value="{context>/savingStartDate}" />
+                        
+                        <Label id="saving-end-date-label" text="Saving End Date" labelFor="saving-end-date-field"/>
+                        <DatePicker id="saving-end-date-field" value="{context>/savingEndDate}" />
+                        
+                        <Label id="last-year-po-number-label" text="Last Year PO No." labelFor="last-year-po-number-field"/>
+                        <Input id="last-year-po-number-field" value="{context>/lastYearPONo}" />
+                        
+                        <Label id="last-year-po-value-label" text="Last Year PO Value" labelFor="last-year-po-value-field"/>
+                        <Input id="last-year-po-value-field" value="{context>/lastYearPOValue}" />
+                        
+                        <Label id="last-year-po-currency-label" text="Last Year PO Currency" labelFor="last-year-po-currency-field"/>
+                        <Input id="last-year-po-currency-field" value="{context>/lastYearPOCurrency}" />
+                        
+                        <Label id="attachment-label" text="Attachment" labelFor="attachment-field"/>
+                        <Input id="attachment-field" value="{context>/attachment}" />
+                        
+                        <Label id="quoted-value-prev-period-spend-label" text="Quoted Value/Prev Period Spend" labelFor="quoted-value-prev-period-spend-field"/>
+                        <Input id="quoted-value-prev-period-spend-field" value="{context>/quotedValuePrevPeriodSpend}" />
+                        
+                        <Label id="currency-label" text="Currency" labelFor="currency-field"/>
+                        <Input id="currency-field" value="{context>/currency}" />
+                        
+                        <Label id="order-value-revised-spend-label" text="Order Value/Revised Spend In USD" labelFor="order-value-revised-spend-field"/>
+                        <Input id="order-value-revised-spend-field" value="{context>/orderValueRevisedSpendInUSD}" />
+                        
+                        <Label id="savings-label" text="Savings" labelFor="savings-field"/>
+                        <Input id="savings-field" value="{context>/savings}" />
+                        
+                        <Label id="savings-percentage-label" text="Savings (%)" labelFor="savings-percentage-field"/>
+                        <Input id="savings-percentage-field" value="{context>/savingsPercentage}" />
+                        
+                        <Label id="saving-type-label" text="Saving Type" labelFor="saving-type-field"/>
+                        <Input id="saving-type-field" value="{context>/savingType}" />
+                        
+                        <Label id="saving-distribution-across-qtrs-label" text="Saving Distribution across Qtrs" labelFor="saving-distribution-across-qtrs-field"/>
+                        <Input id="saving-distribution-across-qtrs-field" value="{context>/savingDistributionAcrossQtrs}" />
+                        
+                        <Label id="bmf-validation-label" text="BMF Validation" labelFor="bmf-validation-field"/>
+                        <Input id="bmf-validation-field" value="{context>/bmfValidation}" />
+                        
+                        <Label id="yoy-saving-function-bmf-approval-label" text="YOY Saving - function BMF Approval" labelFor="yoy-saving-function-bmf-approval-field"/>
+                        <Input id="yoy-saving-function-bmf-approval-field" value="{context>/yoySavingFunctionBMApproval}" />
                     </form:content>
                 </form:SimpleForm>
+                
+                <html:hr/>
+                
+                <FlexBox id="comment-wrapper" direction="Column" class="sapUiSmallMargin" width="auto">
+                    <CheckBox id="Ack" text="I acknowledge that we have received your order and will process it based on the availability" />
+                    <Label id="comment-label" text="Comment" />
+                    <TextArea id="comment-field" showExceededText="true" maxLength="1000" width="100%" height="120px" value="{context>/comment}"/>
+                </FlexBox>
             </content>
         </Page>
     </App>
